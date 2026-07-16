@@ -1,0 +1,321 @@
+📌 Document Information (Portfolio BRD)
+
+| Field | Details |
+| --- | --- |
+| Project Owner | Vasu Sharma |
+| Project Type | Financial Risk Analytics / Business Analysis Case Study |
+| Status | ✅ Completed |
+| Date | 2025 |
+| Tools | SQL, PostgreSQL, Power BI, DAX |
+| GitHub | https://github.com/vasu39419-spec/-Bitcoin-Market-Analysis-Dashboard |
+| Portfolio Note | This BRD demonstrates Business Analyst methodology (problem framing → requirements → delivery → validation) for placements and job applications. |
+
+---
+
+## 1. Executive Summary (Personal)
+
+As a B.Com student at Sri Aurobindo College, Delhi, with a personal interest in retail investing/finance, I realized my Bitcoin research and decision-making could become emotional and unstructured—driven by social media hype, fast-moving narratives, and inconsistent “gut-feel” checks—without a repeatable risk framework.
+
+To solve this, I analyzed **4,175 days** of Bitcoin **OHLC (Open, High, Low, Close)** data covering **2014–2026** and built a structured financial BI workflow using **PostgreSQL, SQL, Power BI, and DAX**. The goal was to convert a long, scattered research process into a repeatable decision-support dashboard built on verified YoY performance and market-cycle context.
+
+**Outcome:** I replaced gut-feeling tracking with a **repeatable YoY-based risk framework** and reduced research time **from weeks to minutes** by using a single dashboard to benchmark years, identify risk triggers, and summarize cycles.
+
+**Business value (who benefits):**
+
+- **Retail investors / Investment Managers:** Get a reliable year-wise growth view to quickly identify which years showed the strongest growth.
+- **Risk Analysts / Portfolio Managers:** Use YoY benchmarking plus the **±30% YoY volatility flag** to identify periods of highest risk and compare performance across cycles.
+- **Executive Team / Compliance stakeholders:** Consume a clear executive summary and market cycle narrative (4-year cycles observed) for high-level decision-making and risk governance conversations.
+
+---
+
+## 1.5 Why I Built This Project (My Motivation & Learning Journey) 💡
+
+> "If I can analyze a job market like a business problem, why can't I analyze Bitcoin's price history the same way — as a structured risk assessment rather than a prediction?"
+> 
+
+### Personal need
+
+- I wanted to stop relying on hype-driven decisions and replace them with a repeatable, explainable framework.
+- I needed one structured source that could summarize YoY performance, risk years, and cycle patterns without endless scrolling across charts and posts.
+
+### Analytical project
+
+- I stored the dataset in **PostgreSQL** and used **SQL** with **joins, CTEs, aggregations, window functions (LAG for YoY), and GROUP BY** to compute YoY and summarize patterns.
+- I built a **4-page Power BI dashboard** and used **DAX** to implement YoY measures and KPI-level insights for filtering and executive reporting.
+
+### Portfolio case study
+
+- I wrote this BRD as a placement-focused BA case study to demonstrate how I frame a business problem, define requirements, translate them into data work, and deliver executive-ready insights.
+
+### Skills demonstrated (end-to-end BA thinking)
+
+- Business Problem Framing
+- Stakeholder Analysis
+- Requirements Definition (5 BRs documented)
+- Financial Domain Knowledge (OHLC, YoY, market cycles)
+- SQL Analysis (YoY, aggregations, window functions)
+- Executive Reporting (designed for non-technical executives)
+- Data Storytelling (findings framed as business insights)
+
+---
+
+## 2. Business Background & Problem Statement (Personal → Business Framing)
+
+### 2.1 Personal story (how the problem showed up)
+
+- **Reactive:** most commentary only discusses volatility after a crash
+- **Emotion-driven:** buy/sell decisions based on hype, not history
+- **Fragmented:** no single structured view of YoY performance across full history
+- **Hard to validate:** difficult to independently confirm historical claims without raw data
+
+### 2.2 Pain points I personally experienced ⚠️
+
+- No single source showing YoY performance across Bitcoin's full trading history
+- Difficulty distinguishing normal volatility from genuinely high-risk years
+- Lack of a repeatable rule to flag a year as high-risk vs strong entry point
+- Analysis paralysis from too many conflicting opinions with no data backing
+
+### 2.3 Current state vs. desired state (As-Is vs To-Be) 📊
+
+| Dimension | As-Is (Before) | To-Be (Target State) |
+| --- | --- | --- |
+| Research workflow | Manual chart-watching, social media sentiment | Dashboard-led YoY & cycle analysis |
+| Effort | Ongoing unstructured monitoring | One dashboard for historical risk benchmarking |
+| Confidence | Low (emotion/hype-driven) | Higher (data-driven, rule-based) |
+| Risk identification | Reactive (after a crash) | Proactive (flagged via YoY ±30% threshold) |
+| Decision support | Gut feeling based on posts | Evidence-based YoY benchmark + 4-year cycle context |
+
+### 2.4 Problem statement (BA-style)
+
+Investment managers, risk analysts, and retail investors need a single, reliable, data-driven view of Bitcoin's historical Year-over-Year performance and market cycle patterns, because current market commentary is fragmented, reactive, and difficult to validate or use for structured investment decision-making.
+
+---
+
+## 3. Business Objectives (Personal)
+
+### 3.1 Primary objectives
+
+1. Dashboard showing YoY price performance for every year in the dataset  
+2. Identify the single strongest historical growth year  
+3. Identify the single highest historical risk year  
+4. Define a repeatable ±30% YoY threshold rule to flag risk years automatically  
+5. Demonstrate BA methodology end-to-end (requirements → data → insight → delivery → documentation)  
+
+### 3.2 Success metrics
+
+- Identify strongest and riskiest year within seconds using the dashboard
+- Clean validated dataset of **4,175 days** stored in PostgreSQL
+- Dashboard with SQL-verified YoY calculations
+- **4-year market cycle** pattern documented and visible
+- GitHub repo with SQL scripts and documentation a recruiter can review
+
+---
+
+## 4. Project Scope (Personal)
+
+### 4.1 ✅ In Scope
+
+- [x]  Historical daily OHLC data analysis (4,175 days, 2014–2026)
+- [x]  YoY performance calculation for every year
+- [x]  Risk/volatility threshold identification (±30% YoY flag rule)
+- [x]  4-year market cycle identification and documentation
+- [x]  Power BI dashboard (4 pages) with DAX-based YoY measures
+- [x]  Executive summary page for non-technical stakeholders
+- [x]  Documentation (this BRD + GitHub)
+
+### 4.2 🚫 Out of Scope
+
+- [ ]  Real-time/live price data pipeline
+- [ ]  Predictive analytics / ML price forecasting
+- [ ]  Multi-cryptocurrency comparison (Bitcoin only)
+- [ ]  Automated trade execution or alerts
+- [ ]  Regulatory/tax reporting features
+- [ ]  Production-grade deployment with enterprise security
+
+---
+
+## 5. Personas (Who This Was Built For) — Personal First
+
+### 5.1 Primary persona: Myself (Retail Investor / Fresh Graduate)
+
+**Profile**
+
+- **Name:** Vasu Sharma
+- **Background:** B.Com student, Sri Aurobindo College (Delhi)
+- **Experience:** 0 years professional; personal interest in retail investing and financial analytics
+- **Decision timeline:** Ongoing / long-term learning
+- **Interest areas:** Personal finance, FinTech, risk analysis, financial BA roles
+
+**My key questions this dashboard answers**
+
+- Which years historically showed the strongest Bitcoin performance?
+- Which years historically showed the highest risk/drawdown?
+- What is the 4-year market cycle pattern?
+- What YoY threshold flags a high-risk year repeatably?
+- How volatile has Bitcoin actually been across its full trading history?
+
+### 5.2 Secondary personas (stakeholder view)
+
+| Persona | What they need | How this dashboard helps |
+| --- | --- | --- |
+| Investment Managers | Strongest growth year identification | Highlights **2017 (+605% YoY)** and supports YoY comparisons by year |
+| Risk Analysts | High-risk period flagging | Applies **±30% YoY volatility flag** and highlights **2022 (−41% YoY)** |
+| Portfolio Managers | Historical benchmarking | Provides clean YoY comparison across the full 2014–2026 dataset |
+| Executive Team | Market cycle overview | Provides cycle narrative and an **Executive Summary** dashboard page |
+
+## 6. Assumptions & Constraints (Technical / Formal)
+
+### 6.1 Assumptions
+
+- Historical price behavior provides directional insight only, not a guarantee of future performance
+- Dataset sourced from a reliable provider and accurately represents Bitcoin's daily price history 2014–2026
+- YoY % change is a reasonable proxy for annual volatility when compared across years
+
+### 6.2 Constraints
+
+- Historical patterns may not repeat in future market cycles
+- Analysis is limited to Bitcoin only; cross-asset comparison is out of scope
+- Dashboard performance depends on Power BI model design and local machine resources
+
+---
+
+## 7. Solution Overview (Actual Project Data + What Was Built)
+
+### 7.1 Data coverage (actual numbers)
+
+- Total days analyzed: **4,175 days** of OHLC data
+- Date range: **2014–2026**
+- Price range: **$0 to $73,000+**
+- Strongest year: **2017 (+605% YoY)**
+- Highest-risk year: **2022 (−41% YoY)**
+- Second bull cycle: **2020–2021**
+- Market cycle pattern: **4-year cycles observed**
+
+### 7.2 Core technology stack
+
+- **PostgreSQL:** storage and structured querying
+- **SQL:** joins, CTEs, aggregations, window functions (LAG for YoY), GROUP BY
+- **Power BI:** data modeling and visualization (4-page dashboard)
+- **DAX:** YoY % change measures and KPI calculations
+
+Repository reference: https://github.com/vasu39419-spec/-Bitcoin-Market-Analysis-Dashboard
+
+### 7.3 Dashboard pages
+
+1. **Market Overview — Overall price history:** Establishes full historical context, including price range across the dataset.  
+2. **YoY Performance — Growth vs decline by year:** Shows YoY performance for every year and highlights benchmark years.  
+3. **Risk Analysis — Highest risk periods:** Focuses on risk identification, including the ±30% YoY volatility flag.  
+4. **Executive Summary — Key takeaways for decision-makers:** Summarizes cycles, benchmark years, and rules in plain language.  
+
+### 7.4 Key findings
+
+- 2017: Strongest growth year (**+605% YoY**)
+- 2022: Highest risk/decline year (**−41% YoY**)
+- 2020–2021: Second major bull cycle identified
+- Consistent 4-year market cycles observed
+- High volatility periods mapped for risk management
+- Price range: **$0 to $73,000+** across 12 years
+
+---
+
+## 8. Business Requirements (BR) ✅ (With User Stories + Acceptance Criteria)
+
+**Note:** Requirements are written in BA-friendly format (BR + user story + acceptance criteria) to show how the dashboard supports real investment decisions — not just visuals.
+
+### 8.1 Requirements table
+
+| BR ID | Requirement | User Story | Acceptance Criteria (Specific) |
+| --- | --- | --- | --- |
+| BR-01 | YoY price performance calculation ✅ Done | As an investment manager, I want to see YoY performance for every year, so that I can compare historical periods at a glance. | Dashboard displays YoY % for every year across all **4,175 days**. |
+| BR-02 | Peak and risk year identification ✅ Done | As a risk analyst, I want the strongest and riskiest years clearly identified, so that I can benchmark against historical extremes. | Dashboard explicitly shows **2017 (+605% YoY)** as strongest and **2022 (−41% YoY)** as highest risk. |
+| BR-03 | Historical price range analysis ✅ Done | As a portfolio manager, I want the full historical price range visible, so that I can model risk thresholds accurately. | Dashboard shows full price range **$0 to $73,000+** and supports year-based filtering. |
+| BR-04 | Interactive filtering by year/period ✅ Done | As an executive, I want to filter by year or period, so that I can focus on specific market cycles without seeing all data at once. | Year/period filtering works across all **4 dashboard pages** without breaking visuals. |
+| BR-05 | Executive summary delivery ✅ Done | As an executive team member, I want a plain-language summary page, so that I can understand key findings without interpreting raw data. | Executive Summary page includes **+200% YoY** entry-pattern reference and **−30% YoY** risk-review trigger in plain language. |
+
+### 8.2 Non-functional requirements
+
+- **NFR-01 Performance:** Dashboard remains responsive when filtering across the 4,175-day dataset
+- **NFR-02 Usability:** Non-technical executives can interpret findings without training
+- **NFR-03 Accuracy:** Power BI YoY results match PostgreSQL query outputs (spot-checked)
+- **NFR-04 Maintainability:** SQL queries and DAX measures documented and readable in repository
+
+---
+
+## 9. Data Requirements (Technical / Formal)
+
+### 9.1 Data entities
+
+- Daily Price Record (fact) — Date, Open, High, Low, Close, Volume
+- Year (dimension) — for YoY aggregation
+- Market Cycle (derived grouping) — Cycle 1/2/3
+- Risk Flag (derived field) — based on ±30% YoY threshold
+
+### 9.2 Minimum required fields
+
+Date, Open, High, Low, Close, Volume (where available), Derived: Year, YoY % Change, Risk Flag (Yes/No), Market Cycle label
+
+### 9.3 Data transformation rules
+
+- Aggregation of daily OHLC into yearly close-price comparisons for YoY calculation using SQL window function (LAG)
+- DAX measure for YoY % change per year
+- ±30% threshold rule applied to derive Risk Flag
+- Market cycle grouping assigned by year (Cycle 1: 2014–2017, Cycle 2: 2018–2022, Cycle 3: 2023–2026)
+- Validation of YoY outputs against manual SQL aggregation queries
+
+---
+
+## 10. Reporting & Visualization Requirements 📊
+
+- KPI cards use consistent formatting (%, year labels, USD price range)
+- Risk-flagged years visually distinct (color-coded, e.g., red for high-risk years)
+- Key visuals reflect main findings (2017 +605%, 2022 −41%, 4-year cycle pattern)
+- DAX measures used for all YoY calculations for consistent filter behavior across pages
+
+---
+
+## 11. Acceptance Criteria ✅
+
+1. Dashboard displays YoY % for every year in the 4,175-day dataset  
+2. 2017 (+605% YoY) and 2022 (−41% YoY) clearly identified as benchmark years  
+3. Years with YoY beyond ±30% are visually flagged  
+4. 4-year market cycle pattern is documented and visible in dashboard  
+5. YoY calculations reproducible via SQL validation queries  
+6. Executive Summary page includes plain-language recommendation and is accessible via GitHub link  
+
+---
+
+## 12. Risks & Mitigation (What Actually Happened) ⚠️
+
+| Risk/challenge I faced | Why it mattered | What I actually did (mitigation) |
+| --- | --- | --- |
+| Historical patterns may not predict future | Risk of over-reliance on past data | Explicitly stated as disclaimer in executive summary page |
+| YoY alone oversimplifies volatility | Single metric hides intra-year swings | Supplemented with ±30% threshold rule and 4-year cycle context |
+| Data validation across SQL and Power BI | KPI mismatches undermine credibility | Spot-checked Power BI YoY outputs against manual SQL queries |
+
+---
+
+## 13. Dependencies (Technical / Formal)
+
+- PostgreSQL environment (local or hosted)
+- Power BI Desktop for development
+- GitHub repository for documentation and reproducibility
+
+---
+
+## 14. Milestones (Portfolio timeline — illustrative)
+
+- ✅ Completed: Data sourcing & structuring (4,175 days OHLC, 2014–2026)
+- ✅ Completed: PostgreSQL schema + validation queries
+- ✅ Completed: SQL analysis (YoY aggregation, window functions, threshold logic, cycle grouping)
+- ✅ Completed: Power BI dashboard build + DAX measures (4 pages)
+- ✅ Completed: Documentation (BRD + GitHub)
+
+---
+
+## 15. Glossary
+
+- **OHLC:** Open, High, Low, Close — standard daily price data format
+- **YoY:** Year-over-Year, percentage comparison between consecutive years
+- **DAX:** Data Analysis Expressions, used for measures and KPIs in Power BI
+- **SQL CTE:** Common Table Expression, used for structured multi-step queries
+- **Market Cycle:** A recurring pattern of growth and correction observed in Bitcoin's price history (approximately every 4 years)
