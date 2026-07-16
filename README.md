@@ -1,15 +1,13 @@
-# Bitcoin Market Analysis — Financial Business Intelligence Case Study
+# Bitcoin Investment Risk Assessment — Business Analysis Case Study
 
-> An end-to-end financial analytics project analyzing 4,175 days 
-> of Bitcoin OHLC data (2014–2026) to deliver executive-level 
-> market intelligence for investment decision-making and 
-> risk management.
+An end-to-end Business Analysis case study analyzing 4,175 days of 
+Bitcoin OHLC data (2014–2026) to deliver structured investment risk 
+intelligence for retail investors and portfolio decision-makers.
 
 **Project Owner:** Vasu Sharma  
-**Project Type:** Financial Analytics / Business Intelligence Portfolio  
+**Project Type:** Financial Risk Analytics / Business Analysis Case Study  
 **Status:** ✅ Completed  
-**Date:** 2025  
-**Tools:** SQL · PostgreSQL · Power BI · DAX  
+**Tools:** SQL · PostgreSQL · Power BI · DAX · Jira  
 **GitHub:** [View Repository](https://github.com/vasu39419-spec/-Bitcoin-Market-Analysis-Dashboard)
 
 ---
@@ -17,56 +15,35 @@
 ## 📁 Project Documentation
 
 | Document | Description | Link |
-|----------|-------------|------|
-| 📄 Business Context | Problem statement, stakeholders, objectives | [View](./Business_Context.md) |
-| 🔍 SQL Queries | All analysis queries for financial metrics | [View Queries] |
-| 📊 Dashboard | 4-page Power BI dashboard | See screenshots below |
+|----------|--------------|------|
+| 📄 Business Requirements Document | Full BRD with stakeholders, objectives, and requirements | [View BRD](./business-analysis/Bitcoin_Investment_Risk_Assessment_BRD.pdf) |
+| 📋 User Stories & Epics | 6 user stories across 3 Epics with acceptance criteria | See Section 6 below |
+| 🔄 Jira Board | Completed Scrum board (2 sprints) | [View Screenshot](./business-analysis/Jira_Board_Bitcoin.png) |
+| 🔍 SQL Queries | All analysis queries for financial metrics | [View Queries](./sql/bitcoin_queries.sql) |
+| 📊 Dashboard | Power BI dashboard (4 pages) | See screenshots below |
 
 ---
 
-## 🎯 Business Context
+## 🎯 1. Business Problem
 
-### The Business Problem
+Retail investors, risk analysts, and portfolio managers struggle to make 
+structured Bitcoin investment decisions without a repeatable analytical 
+framework — relying instead on social media hype, reactive commentary, 
+and inconsistent "gut-feel" tracking.
 
-Investment firms, portfolio managers, and individual investors 
-struggle to identify Bitcoin market cycles, growth periods, 
-and risk periods without structured analytical tools.
-
-Key questions stakeholders needed answered:
-
-- Which year showed the strongest Bitcoin growth?
-- Which year represented the highest investment risk?
+**Key questions stakeholders needed answered:**
+- Which years showed the strongest Bitcoin growth?
+- Which years represented the highest investment risk?
 - How volatile is Bitcoin year-over-year?
-- What are the historical price ranges for risk modeling?
-- How can executives quickly understand market cycles?
-
-### My Approach (Business Analysis Thinking)
-
-I treated this as a **financial business intelligence problem**:
-
-1. Defined the business problem and stakeholder questions
-2. Collected 4,175 days of OHLC historical data
-3. Stored in PostgreSQL for structured analysis
-4. Wrote SQL queries for YoY calculations
-5. Built executive Power BI dashboard
-6. Delivered insights in executive summary format
-
-### Business Impact
-
-| Metric | Value |
-|--------|-------|
-| Data Analyzed | 4,175 days (2014–2026) |
-| Strongest Growth Year | 2017 (+605% YoY) |
-| Highest Risk Year | 2022 (-41% YoY) |
-| Research Time | Reduced from weeks to minutes |
-| Stakeholder Value | Executive summary for investment decisions |
+- Is there a recurring market cycle pattern to reference?
+- How can non-technical stakeholders quickly understand market cycles?
 
 ---
 
-## 👥 Stakeholders Identified
+## 👥 2. Stakeholders
 
 | Stakeholder | Role | Key Question |
-|-------------|------|--------------|
+|-------------|------|---------------|
 | Investment Managers | Primary User | Which years showed strongest growth? |
 | Risk Analysts | Primary User | Which periods showed highest risk? |
 | Portfolio Managers | Secondary User | How to benchmark BTC performance? |
@@ -74,73 +51,97 @@ I treated this as a **financial business intelligence problem**:
 
 ---
 
-## 📈 Key Business Findings
+## 📋 3. Business Requirements
 
-✅ **2017** — Strongest growth year **(+605% YoY)**  
-✅ **2022** — Highest risk/decline year **(-41% YoY)**  
-✅ **2020–2021** — Second major bull cycle identified  
-✅ **Consistent 4-year market cycles** observed in data  
-✅ **High volatility periods** mapped for risk management  
-✅ **Price range:** $0 to $73,000+ across 12 years  
-
----
-
-## 📊 Dashboard Pages
-
-| Page | Business Question Answered |
-|------|---------------------------|
-| 📌 Market Overview | What does the overall price history look like? |
-| 📈 YoY Performance | Which years showed growth vs decline? |
-| ⚠️ Risk Analysis | When were the highest risk periods? |
-| 📋 Executive Summary | What are the key takeaways for decision-makers? |
-
----
-
-## 💼 Business Requirements (Summary)
-
-| Requirement | Description | Status |
-|-------------|-------------|--------|
+| BR ID | Requirement | Status |
+|-------|-------------|--------|
 | BR-01 | YoY price performance calculation | ✅ Done |
 | BR-02 | Peak and risk year identification | ✅ Done |
 | BR-03 | Historical price range analysis | ✅ Done |
 | BR-04 | Interactive filtering by year/period | ✅ Done |
 | BR-05 | Executive summary delivery | ✅ Done |
 
----
-
-## 🔄 Analytical Approach
-Business Problem Defined
-↓
-Stakeholder Questions Identified
-↓
-Data Collected (4,175 days OHLC)
-↓
-PostgreSQL Database Setup
-↓
-SQL Analysis (YoY calculations)
-↓
-Power BI Dashboard Built
-↓
-Executive Summary Delivered
-↓
-Insights for Investment Decisions
-
+Full requirements, user stories, and acceptance criteria documented in the [BRD](./business-analysis/Bitcoin_Investment_Risk_Assessment_BRD.pdf).
 
 ---
 
-## 🛠️ Technical Stack
+## 📊 4. Process Mapping (As-Is vs To-Be)
+
+| Step | As-Is (Before) | To-Be (After) |
+|------|-----------------|----------------|
+| 1 | See BTC price hype on social media | Open Power BI dashboard |
+| 2 | Manually check charts, no framework | View YoY performance across full dataset |
+| 3 | React emotionally to hype/fear | System auto-flags high-risk years (±30%) |
+| 4 | Decide based on gut feeling | Review 4-year market cycle context |
+| 5 | No record of reasoning | Documented, auditable recommendation |
+
+---
+
+## 🔄 5. Agile Delivery
+
+**3 Epics · 6 User Stories · 2 Sprints · All stories completed**
+
+![Jira Board](./business-analysis/Jira_Board_Bitcoin.png)
+
+### Epics
+
+- **Historical Performance Intelligence Engine** — YoY benchmarking across full dataset
+- **Investment Risk Identification Framework** — Automated risk flagging (±30% YoY)
+- **Market Cycle Intelligence & Strategic Context** — 4-year cycle pattern & recommendations
+
+### User Stories
+
+| ID | Story | Points | Epic |
+|----|-------|--------|------|
+| BIRA-4 | View YoY performance for all historical years | 5 | Historical Performance Intelligence Engine |
+| BIRA-5 | Filter dashboard by specific year or period | 3 | Historical Performance Intelligence Engine |
+| BIRA-6 | Auto-flag years exceeding ±30% YoY volatility | 5 | Investment Risk Identification Framework |
+| BIRA-7 | Highlight the single highest-risk year | 3 | Investment Risk Identification Framework |
+| BIRA-8 | Document and visualize the 4-year market cycle pattern | 5 | Market Cycle Intelligence & Strategic Context |
+| BIRA-9 | Deliver plain-language investment recommendation | 3 | Market Cycle Intelligence & Strategic Context |
+
+**Total Story Points:** 23
+
+---
+
+## 📈 6. Key Business Findings
+
+- ✅ **2017** — Strongest growth year (+605% YoY)
+- ✅ **2022** — Highest risk/decline year (−41% YoY)
+- ✅ **2020–2021** — Second major bull cycle identified
+- ✅ Consistent **4-year market cycles** observed in data
+- ✅ High volatility periods mapped for risk management
+- ✅ Price range: **$0 to $73,000+** across 12 years
+
+---
+
+## 📊 7. Dashboard Pages
+
+| Page | Business Question Answered |
+|------|------------------------------|
+| 📌 Market Overview | What does the overall price history look like? |
+| 📈 YoY Performance | Which years showed growth vs decline? |
+| ⚠️ Risk Analysis | When were the highest risk periods? |
+| 📋 Executive Summary | What are the key takeaways for decision-makers? |
+
+*(Insert dashboard screenshots here)*
+
+---
+
+## 🛠️ 8. Technical Stack
 
 | Layer | Technology |
 |-------|------------|
 | Database | PostgreSQL |
-| Analysis | SQL (Joins, CTEs, Aggregations, YoY) |
+| Analysis | SQL (Joins, CTEs, Aggregations, Window Functions) |
 | Visualization | Power BI Desktop |
 | Calculations | DAX Measures (YoY % change) |
+| Delivery Tracking | Jira (Scrum) |
 | Data Format | OHLC (Open, High, Low, Close) |
 
 ---
 
-## 📊 Dataset Profile
+## 📊 9. Dataset Profile
 
 | Field | Details |
 |-------|---------|
@@ -152,9 +153,9 @@ Insights for Investment Decisions
 
 ---
 
-## 🔍 Sample SQL Analysis
+## 🔍 10. Sample SQL Analysis
 
-```sql
+
 -- Year-over-Year Performance Calculation
 SELECT
     EXTRACT(YEAR FROM date) AS year,
@@ -171,44 +172,50 @@ FROM bitcoin_data
 GROUP BY EXTRACT(YEAR FROM date)
 ORDER BY year;
 
-📋 Executive Summary (Key Insight)
-This analysis identified clear 4-year market cycles in
-Bitcoin's price history:
+📋 11. Executive Summary (Key Insight)
+This analysis identified clear 4-year market cycles in Bitcoin's
+price history:
 
-Cycle 1 (2013–2017): Early adoption → First major peak
+Cycle 1 (2014–2017): Early adoption → First major peak
 Cycle 2 (2018–2022): Correction → Second major peak → Crash
 Cycle 3 (2023–2026): Recovery → Current cycle
+Investment Implication: Risk analysts can use historical cycle
+patterns to identify potential entry/exit points and risk management
+windows. Treat YoY growth beyond +200% as a strong historical
+entry-pattern reference; treat YoY decline beyond −30% as a mandatory
+risk-review trigger.
 
-Investment Implication:
-Risk analysts can use historical cycle patterns to identify
-potential entry/exit points and risk management windows.
+⚠️ Note: This is an analytical portfolio project. Not financial advice.
 
-⚠️ Note: This is an analytical portfolio project.
-Not financial advice.
-
-🚀 BA Skills Demonstrated
+🚀 12. BA Skills Demonstrated
 Skill	Evidence
 Business Problem Framing	Defined investment/risk questions
 Stakeholder Analysis	Investment managers, risk analysts, portfolio teams
-Requirements Definition	5 business requirements documented
+Requirements Definition	5 business requirements + 6 user stories documented
+Agile Delivery	3 Epics, 6 stories, 2 completed sprints in Jira
 Financial Domain Knowledge	OHLC data, YoY analysis, market cycles
 SQL Analysis	YoY calculations, aggregations, window functions
 Executive Reporting	Dashboard designed for non-technical executives
 Data Storytelling	Findings framed as business insights
-📂 Repository Structure
-text
 
-Bitcoin-Market-Analysis-Dashboard/
+📂 13. Repository Structure
+Bitcoin-Investment-Risk-Assessment/
 │
-├── 📄 Business_Context.md
-├── 📊 Dashboard screenshots
-├── 🔍 SQL queries
-├── 📁 bitcoin_data.csv
+├── 📁 business-analysis/
+│   ├── Bitcoin_Investment_Risk_Assessment_BRD.pdf
+│   └── Jira_Board_Bitcoin.png
+│
+├── 📁 sql/
+│   └── bitcoin_queries.sql
+│
+├── 📁 data/
+│   └── bitcoin_data.csv
+│
+├── 📁 dashboard/
+│   └── dashboard_screenshots/
+│
 └── 📖 README.md
-🔗 Related Projects
-Project	Domain	Link
-India Job Market Analysis	Career Analytics / Full BA Case Study	View
-YouTube Shorts Analysis	Digital Media Analytics	View
+
 📧 Contact
 Vasu Sharma
 Business Analyst | SQL · Power BI · Financial Analytics · Agile
@@ -219,9 +226,6 @@ Business Analyst | SQL · Power BI · Financial Analytics · Agile
 
 📜 Note
 This is a self-directed portfolio project created to demonstrate
-Business Analyst skills in financial domain including problem
-framing, stakeholder analysis, SQL analysis, and executive
-Power BI reporting.
-
-⭐ If this project demonstrates strong financial BA thinking,
-please consider starring this repository.
+Business Analyst skills in the financial domain including problem
+framing, stakeholder analysis, Agile delivery, SQL analysis, and
+executive Power BI reporting.
